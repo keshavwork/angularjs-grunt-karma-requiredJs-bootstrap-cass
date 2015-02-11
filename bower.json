@@ -1,0 +1,35 @@
+{
+  "name": "CLM-WEB-UI",
+  "version": "0.1.0",
+  "dependencies": {
+    "angular": "~>1.3.1",
+    "angular-route": "~>1.3.1",
+    "angular-resource": "~1.3.9",
+    "angular-translate-loader-url": "~>2.2.0",
+    "angular-translate": "~>2.2.0",
+    "angular-translate-loader-static-files": "~>2.2.0",
+    "angular-translate-storage-local": "~>2.2.0",
+    "angular-cookies": "~>1.3.1",
+    "angular-ui-router": "~>0.2.11",
+    "jquery": "~>2.0.3",
+    "angular-sanitize": "~>1.3.1",
+    "requirejs": "~2.1.15",
+    "angular-schema-form": "https://github.com/macku/angular-schema-form.git#master",
+    "angular-bootstrap": "~>0.11.2",
+    "bootstrap-sass-official": "~>3.2.0",
+    "angular-strap": "~>2.1.3",
+    "bootstrap-additions": "~>0.2.3",
+    "angular-animate": "~>1.3.1",
+    "a0-angular-storage": "~0.0.6",
+    "angular-smart-table": "~1.4.4",
+    "tecnotree-ui-library" : "http://git.tecnotree.com/tec_common/ui-lib.git#develop",
+    "oauth-ng": "~0.3.6"
+  },
+  "devDependencies": {
+    "angular-mocks": "~>1.3.1",
+    "jasmine-jquery": "1.7"
+  },
+  "resolutions": {
+    "angular": "~>1.3.9"
+  }
+}

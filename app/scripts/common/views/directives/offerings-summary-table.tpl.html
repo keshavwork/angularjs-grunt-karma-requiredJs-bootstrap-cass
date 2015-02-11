@@ -1,0 +1,40 @@
+<div>
+ 	<table class="table">
+ 		<thead>
+ 			<tr>
+ 				<td></td>
+ 				<td translate="QTY">QTY</td>
+ 				<td translate="Once">Once</td>
+ 				<td translate="Monthly">Monthly</td>
+ 				<td></td>
+ 			</tr>
+ 		</thead>
+ 		<tbody>
+ 			<tr ng-class="{ active: selectedItem == ofi }" ng-repeat-start="ofi in offeringInfos" ng-click="selectItem(ofi)">
+ 				<td colspan="4">{{ ofi.offering.name }}</td>
+ 				<td>
+ 					<span class="glyphicon glyphicon-remove" aria-label="Remove" ng-hide="readonly" ng-click="onRemove({ item: ofi })"></span>
+ 				</td>
+ 			</tr>
+ 			<tr ng-class="{ active: selectedItem == ofi }" ng-repeat-end ng-click="selectItem(ofi)">
+ 				<td></td>
+ 				<td>
+ 					<input type="number" ng-hide="readonly" ng-model="ofi.count" min="1" />
+ 					<span ng-show="readonly">{{ ofi.count }}</span>
+ 				</td>
+ 				<td>{{ ofi.offering.charges.sumOfOTC * ofi.count | number: 2 }}</td>
+ 				<td>{{ ofi.offering.charges.sumOfRC * ofi.count | number: 2 }}</td>
+ 				<td></td>
+ 			</tr>
+ 		</tbody>
+ 		<tfoot>
+ 			<tr>
+ 				<td><strong translate="Total">Total</strong></td>
+ 				<td></td>
+ 				<td><strong>{{ onetimeTotal | number: 2 }}</strong></td>
+ 				<td><strong>{{ monthlyTotal | number: 2 }}</strong></td>
+ 				<td></td>
+ 			</tr>
+ 		</tfoot>
+ 	</table>
+</div>

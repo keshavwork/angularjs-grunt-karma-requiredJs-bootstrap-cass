@@ -1,0 +1,6 @@
+.list-group-item {
+  padding: #{$list-group-item-padding/2} #{$list-group-item-padding};
+}
+a.list-group-item {
+  font-weight: 600;
+}

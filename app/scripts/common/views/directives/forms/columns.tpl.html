@@ -1,0 +1,16 @@
+<div class="panel panel-form">
+  <div class="panel-heading" ng-if="form.title && !form.notitle">
+    <h2 class="panel-title">{{::form.title}}</h2>
+  </div>
+
+  <div class="panel-body row" ng-init="columns = 12; columnsNum = form.columns.length">
+
+    <div ng-disabled="form.readonly"
+      ng-repeat="column in form.columns"
+      ng-class="column.style || ('col-md-' + (columns / columnsNum))">
+
+      <sf-decorator ng-repeat="item in column.items" form="item"></sf-decorator>
+
+    </div>
+  </div>
+</div>

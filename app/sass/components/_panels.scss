@@ -1,0 +1,114 @@
+.panel {
+  border: none;
+  margin-bottom: $panel-margin-bottom;
+}
+
+.panel-title {
+  font-size: $panel-title-font-size;
+  text-transform: uppercase;
+}
+
+.panel-default {
+  box-shadow: $panel-default-shadow;
+
+  .panel-heading {
+    border-bottom: none;
+  }
+}
+
+.panel-complementary {
+  box-shadow: $panel-complementary-shadow;
+
+  @include panel-variant($panel-default-border, $panel-default-text, $panel-complementary-heading-bg, $panel-default-border);
+  .panel-heading {
+    box-shadow: $panel-complementary-shadow;
+    border-bottom: none;
+  }
+}
+
+.panel-form {
+  margin-bottom: 0;
+  border: none;
+  border-bottom: {
+    width: 1px;
+    style: solid;
+    color: $panel-form-border-color;
+  }
+  .panel-title {
+    text-transform: none;
+    color: $panel-form-title-font-color;
+    font-weight: $panel-form-title-font-weight;
+  }
+  > .panel-body {
+    padding: #{$panel-body-padding} #{$panel-body-padding} #{$panel-body-padding/2};
+  }
+  > .panel-heading + .panel-body {
+    padding: #{$panel-body-padding/2} #{$panel-body-padding};
+  }
+}
+
+.panel-form .panel-form {
+  margin-left: -$panel-body-padding;
+  margin-right: -$panel-body-padding;
+  border: none;
+  box-shadow: none;
+  border-top: {
+    width: 1px;
+    style: solid;
+    color: $panel-form-border-color;
+  }
+}
+form .list-group-item {
+  margin-left: $panel-body-padding/2;
+  margin-right: $panel-body-padding/2;
+  padding: 0;
+}
+
+.list-group .panel-form {
+  border-bottom-width: 0;
+  box-shadow: none;
+  .panel-body {
+    padding: #{$panel-body-padding*0.75} #{$panel-body-padding/2} 0px
+  }
+}
+
+form .panel-group .panel {
+  box-shadow: none;
+  border: none;
+
+  & + .panel {
+    margin-top: 0;
+  }
+
+  .list-group-item {
+    margin-left: -#{$panel-body-padding/2};
+    margin-right: -#{$panel-body-padding/2};
+  }
+}
+
+form .panel-group .panel-default {
+  .panel-heading {
+    background: $panel-bg;
+    border: none;
+    border-top: 1px solid #{$panel-default-border};
+
+    & + .panel-collapse > .panel-body {
+      border: none;
+      padding-bottom: 0px;
+    }
+  }
+  .panel-title {
+    font-size: $panel-title-font-size;
+    text-transform: none;
+  }
+}
+
+.section-main {
+  > .panel-default {
+    margin-bottom: 0;
+
+    &:last-child{
+      margin-bottom: $panel-margin-bottom;
+    }
+  }
+}

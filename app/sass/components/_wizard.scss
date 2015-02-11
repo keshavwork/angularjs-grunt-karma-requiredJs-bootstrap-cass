@@ -1,0 +1,144 @@
+
+.wizzard-bar {
+  position: relative;
+  z-index:10;
+  background-color: $wizzard-bar-background;
+  height: $wizard-bar-height;
+
+  padding-left: floor($grid-gutter-width/2);
+  padding-right: floor($grid-gutter-width/2);
+  margin-left: -$grid-gutter-width;
+  margin-right: -$grid-gutter-width;
+}
+
+.statusbar.affix + .container-main {
+
+  & .wizzard-bar {
+    position: fixed;
+    top: $navbar-height;
+    width: 100%;
+    box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.50);
+
+    & + div {
+      margin-top: $wizard-bar-height;
+    }
+  }
+}
+
+.wizzard {
+  counter-reset: wizzard;
+  list-style-type: none;
+  margin: 20px 0;
+  padding: 0;
+  display: table;
+  width: 100%;
+  min-height: 28px;
+
+  li {
+    display: table-cell;
+    width: 20%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+
+    vertical-align: middle;
+    padding-left: 33px;
+
+    span {
+      background-color: $body-bg;
+      padding-right: 7px;
+      display: inline;
+      line-height: 1.1;
+      float: left;
+    }
+
+    &:before {
+      display: inline-block;
+      counter-increment: wizzard;
+      content: counters(wizzard, ".") " ";
+
+      width: 28px;
+      height: 28px;
+      line-height: 28px;
+
+      text-align: center;
+      border-radius: 14px;
+      background-color: #D8D8D8;
+      color: #4D4F53;
+      font-size: $font-size-large;
+      font-weight: bold;
+
+      position: absolute;
+      top: 50%;
+      left: 0;
+      margin-top: -14px;
+    }
+
+    &:after {
+      content: "";
+      display: inline-block;
+      height: 2px;
+      position: absolute;
+      background-color: #ddd;
+      left: 33px;
+      right: 5px;
+      top: 50%;
+      z-index: -1;
+    }
+
+    &:last-child:after {
+      display: none;
+    }
+
+    &.current {
+      span {
+        font-weight: bold;
+        color: #882345;
+      }
+
+      &:before {
+        background-color: #882345;
+        color: #fff;
+      }
+    }
+
+    &.done {
+      span {
+        color: #882345;
+      }
+
+      &:before, &:after {
+        background-color: #882345;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.wizzard-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.5);
+  z-index: 100;
+
+  background-color: #EFEFEF;
+
+  margin-left: -$grid-gutter-width;
+  margin-right: -$grid-gutter-width;
+
+  padding: 15px #{floor($grid-gutter-width/2)};
+
+  .btn {
+    display: inline-block;
+    margin-right: 20px;
+
+    &.pull-right {
+      margin-right: 0;
+      margin-left: 20px;
+    }
+  }
+}
+
+
+

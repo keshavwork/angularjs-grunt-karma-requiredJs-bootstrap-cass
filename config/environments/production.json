@@ -1,0 +1,21 @@
+{
+	"mockApiUrl": "<@mockApiUrl>",
+	"apiUrl": "<@apiUrl>",
+	"upcApiUrl": "<@upcApiUrl>",
+	"clm360Url": "<@clm360Url>",
+	"clm360ApiUrl": "<@clm360ApiUrl>",
+
+	"apiVersion": "<@apiVersion>",
+	"apiVersionAlternate": "<@apiVersionAlternate>",
+	"tenantId": "<@tenantId>",
+	
+	"oauthUri": "<@oauthUri>",
+	"oauthPathUri": "<@oauthPathUri>",
+	"oauthClientId": "<@oauthClientId>",
+	"oauthRedirectUri": "<@oauthRedirectUri>",
+	"oauthScope": "<@oauthScope>",
+	"ouathState": "<@ouathState>",
+
+	"oauthProfileUri": "<@oauthProfileUri>",
+	"userServiceApiUrl" : "<@userServiceApiUrl>"
+}

@@ -1,0 +1,21 @@
+{
+	"mockApiUrl": "http://localhost:8000",
+	"apiUrl": "http://10.2.53.14:8080",
+	"upcApiUrl": "http://10.2.53.32:8080",
+	"clm360Url": "http://tecnotree.com",
+	"clm360ApiUrl": "http://10.2.53.26:8080",
+
+	"apiVersion": "1",
+	"apiVersionAlternate": "1.0",
+	"tenantId": "1",
+
+	"oauthUri": "https://accounts.google.com",
+	"oauthPathUri": "/o/oauth2/auth",
+	"oauthClientId": "169585172988-0s056aovlkag0l0v7od88845dkk0cnqv.apps.googleusercontent.com",
+	"oauthRedirectUri": "http://localhost:9100",
+	"oauthScope": "https://www.googleapis.com/auth/userinfo.profile",
+	"ouathState": "clm-ui-some-hash-goes-here",
+
+	"oauthProfileUri": "",
+	"userServiceApiUrl" : "https://www.googleapis.com/oauth2/v1/userinfo"
+}

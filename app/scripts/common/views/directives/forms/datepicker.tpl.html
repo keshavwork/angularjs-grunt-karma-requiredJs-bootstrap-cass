@@ -1,0 +1,43 @@
+<div class="form-group has-feedback" ng-init="hasFocus = false" ng-class="{'has-error': hasError(), 'has-focus': hasFocus, 'is-required': form.required}">
+	<label class="control-label" ng-class="form.labelStyle" ng-show="showTitle()" ng-bind="form.title"></label>
+
+	<div class="control-content {{::form.fieldStyle}}" ng-class="{'col-sm-2': form.fieldSize == 'small', 'col-sm-5': form.fieldSize == 'medium'}">
+		<input
+			type="text"
+			class="form-control"
+			placeholder="{{form.description}}"
+
+			schema-name="form"
+			sf-changed="form"
+			schema-validate="form"
+
+			auto-tab-field
+
+			ng-show="form.key"
+			ng-focus="hasFocus = true"
+			ng-blur="hasFocus = false"
+			ng-model-options="{ updateOn: 'default blur' }"
+			ng-model="$$value$$"
+			ng-disabled="form.readonly || (form.disabled && evalExpr(form.disabled, {model: model, arrayIndex: arrayIndex}))"
+			ng-attr-autofocus="{{::form.focus}}"
+			ng-attr-tabindex="{{::form.tabindex}}"
+
+
+			bs-datepicker
+
+			ng-attr-data-date-format="{{::form.dateFormat}}"
+			ng-attr-data-min-view="{{::form.minView}}"
+			ng-attr-data-min-date="{{::form.minDate}}"
+			ng-attr-data-max-date="{{::form.maxDate}}"
+
+			auto-format="DATE_FORMAT"
+			/>
+
+		<i class="form-control-feedback glyphicon glyphicon-calendar"></i>
+
+		<div class="help-block"
+			ng-show="(hasError() && errorMessage(schemaError()))"
+			ng-bind-html="(hasError() && errorMessage(schemaError()))">
+		</div>
+	</div>
+</div>

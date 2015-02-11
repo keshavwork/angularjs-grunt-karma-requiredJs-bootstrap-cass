@@ -1,0 +1,32 @@
+<div class="form-group" ng-init="hasFocus = false" ng-class="{'has-error': hasError(), 'has-focus': hasFocus, 'is-required': form.required}">
+	<label class="control-label" ng-class="form.labelStyle" ng-show="showTitle()" ng-bind="form.title"></label>
+
+	<div class="control-content {{::form.fieldStyle}}" ng-class="{'col-sm-2': form.fieldSize == 'small', 'col-sm-5': form.fieldSize == 'medium'}">
+		<input
+			type="text"
+			class="form-control"
+			placeholder="{{form.description}}"
+
+			schema-name="form"
+			sf-changed="form"
+			schema-validate="form"
+
+			auto-tab-field
+
+			ng-show="form.key"
+			ng-focus="hasFocus = true"
+			ng-blur="hasFocus = false"
+			ng-model="$$value$$"
+			ng-disabled="form.readonly || (form.disabled && evalExpr(form.disabled, {model: model, arrayIndex: arrayIndex}))"
+			ng-attr-autofocus="{{form.focus}}"
+			ng-attr-tabindex="{{form.tabindex}}"
+
+			typeahead-on-select="evalExpr(form.itemSelect)(model, $$value$$)"
+			typeahead="item as (form.itemsSourceField ? item[form.itemsSourceField] : item) for item in evalExpr(form.itemsSource, {}) | filter:$viewValue">
+
+		<div class="help-block"
+			ng-show="(hasError() && errorMessage(schemaError()))"
+			ng-bind-html="(hasError() && errorMessage(schemaError()))">
+		</div>
+	</div>
+</div>

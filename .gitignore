@@ -1,0 +1,13 @@
+/node_modules
+/dist
+/.idea
+/.tmp
+/.sass-cache
+/app/bower_components
+/app/scripts/common/config.js
+/app/sass/invoice/compass/
+/nbproject
+/docs/reports
+/test-results.xml
+app/css/
+app/.DS_Store

@@ -1,0 +1,16 @@
+
+h2.form-section {
+  font-size: $panel-title-font-size;
+  color: $panel-form-title-font-color;
+  font-weight: $panel-form-title-font-weight;
+  padding: #{$panel-body-padding/2} #{$panel-body-padding} #{$panel-body-padding};
+  margin: 0;
+}
+.panel .form-inline{
+	padding:$panel-body-padding;
+
+}
+.panel .form-inline .form-group{
+	width: auto !important;
+
+}

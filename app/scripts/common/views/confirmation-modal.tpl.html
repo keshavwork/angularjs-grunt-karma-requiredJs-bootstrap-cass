@@ -1,0 +1,23 @@
+<div class="modal" tabindex="-1" role="dialog" ng-controller="ConfirmationDialogCtrl as confirmation">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" ng-show="title">
+                <button type="button" class="close" ng-click="$hide()">&times;</button>
+                <h4 class="modal-title" ng-bind-html="title"></h4>
+            </div>
+            <div class="modal-body" ng-show="content">
+                <p ng-bind-html="content"></p>
+            </div>
+            <div class="modal-footer"  ng-if="getConfim() == 'confirm'">
+			
+                <button type="button" class="btn btn-primary" ng-click="confirmation.confirm()" translate="Confirm">Confirm</button>
+                <button type="button" class="btn btn-default" ng-click="confirmation.cancel()" translate="Cancel">Cancel</button>
+		 </div>
+		  <div class="modal-footer"  ng-if="getConfim() == 'ok'">
+            
+                <button type="button" class="btn btn-default" ng-click="confirmation.ok()" translate="Ok">Ok</button>
+				
+            </div>
+        </div>
+    </div>
+</div>

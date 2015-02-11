@@ -1,0 +1,48 @@
+.pagination {
+
+  @include pagination-size(5px, 6px, $font-size-small, $border-radius-small);
+
+  margin: 0;
+
+  > li {
+    > a,
+    > span {
+      color: $gray-darker;
+      background-color: transparent;
+      border-color: transparent;
+    }
+  }
+  > li > a,
+  > li > span {
+    &:hover,
+    &:focus {
+      background-color: $pagination-hover-bg;
+      border-color: $pagination-hover-border;
+    }
+  }
+
+  > .active > a,
+  > .active > span {
+    &,
+    &:hover,
+    &:focus {
+      color: $pagination-active-color;
+      background-color: $pagination-active-bg;
+      border-color: $pagination-active-border;
+    }
+  }
+
+  > .disabled {
+    > span,
+    > span:hover,
+    > span:focus,
+    > a,
+    > a:hover,
+    > a:focus {
+      color: $pagination-disabled-color;
+      background-color: transparent;
+      border-color: transparent;
+    }
+  }
+
+}

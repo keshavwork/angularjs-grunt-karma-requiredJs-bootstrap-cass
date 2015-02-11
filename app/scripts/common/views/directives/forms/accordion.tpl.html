@@ -1,0 +1,13 @@
+<h2 class="form-section" ng-if="form.title" ng-bind="form.title"></h2>
+
+<accordion close-others="form.closeOther">
+    <accordion-group ng-repeat="item in :: form.items" is-open="status.open" data-role="section" ng-attr-data-section="{{::item.id}}" ng-attr-data-opened="{{status.open?1:0}}">
+		<accordion-heading>
+			{{::item.title}}
+
+      <span data-role="toggle" class="pull-right glyphicon" ng-class="{'glyphicon-chevron-up': status.open, 'glyphicon-chevron-down':!status.open}"></span>
+		</accordion-heading>
+
+		<sf-decorator form="item" ng-init="item.notitle = true"></sf-decorator>
+    </accordion-group>
+</accordion>

@@ -1,0 +1,38 @@
+
+.suggestion-box {
+
+	.suggestions-container {
+		height: 140px;
+		overflow: auto;
+
+		.load-indicator {
+			display: inline-block;
+			position: relative;
+			left: 50%;
+			top: 60px;
+		}
+	}
+
+	.control-content {
+		@extend .form-control;
+
+		padding: 0;
+	}
+
+	.panel-footer {
+		padding: 0;
+	}
+
+	.list-group-item {
+		border: 0;
+		cursor: pointer;
+	}
+
+	.label-align-top {
+		vertical-align: text-top;
+	}
+
+	button {
+		width: 100%;
+	}
+}

@@ -1,0 +1,110 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title translate="CLM">CLM</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width">
+
+		<!-- build:css styles/vendor.css -->
+		<!-- bower:css -->
+		<link rel="stylesheet" href="bower_components/angular-motion/dist/angular-motion.css" />
+		<link rel="stylesheet" href="bower_components/bootstrap-additions/dist/bootstrap-additions.min.css" />
+		<!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css({.tmp,app}) styles/style.css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- endbuild -->
+
+	</head>
+	<body ng-click="showDropdown = false">
+    <div class="page-wrapper">
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+
+					<a class="navbar-brand" href="" tabindex="-1">CLM</a>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="top-navbar">
+					<ul class="nav navbar-nav hide" ng-class="{show: userAuthorized}">
+						<li class="active"><a href="" tabindex="-1" translate="Customers">Customers</a></li>
+						<li><a href="" tabindex="-1" translate="Requests">Requests</a></li>
+						<li><a href="" tabindex="-1" translate="Product Catalogue">Product Catalogue</a></li>
+						<li><a href="" tabindex="-1" translate="Solutions">Solutions</a></li>
+						<li><a href="" tabindex="-1" translate="Reports">Reports</a></li>
+					</ul>
+
+					<ul class="nav navbar-nav navbar-right hide" ng-class="{show: userAuthorized}">
+						<li><a href="" tabindex="-1" translate="FAQ">FAQ</a></li>
+						<li><a href="" tabindex="-1" translate="Search">Search</a></li>
+						<li><a href ui-sref="lang-pl">PL</a></li>
+						<li><a href ui-sref="lang-en">EN</a></li>
+
+						<li class="dropdown" ng-class="{open: showDropdown}" ng-click="showDropdown = !showDropdown; $event.stopPropagation();">
+							<a href="" class="dropdown-toggle" data-toggle="dropdown" tabindex="-1" bs-dropdown="dropdown">
+								<span ng-if="userAuthorized" ng-bind="User.getUserName()"></span>
+								<img ng-if="userAuthorized" ng-src="{{User.getUserPhoto()}}" alt="Avatar" width="16" height="16" />
+								<span class="caret"></span>
+							</a>
+
+							<ul class="dropdown-menu" role="menu" ng-class="{show: showDropdown}">
+								<li><a ng-click="logout()" tabindex="-1" translate="Logout">Logout</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+			<!-- /.container-fluid -->
+		</nav>
+
+		<nav class="navbar navbar-default statusbar" role="navigation" bs-affix>
+			<div class="container-fluid">
+				<h1 class="page-header hide" ng-class="{show: userAuthorized}" translate="Create New Retail Customer">Create New Retail Customer</h1>
+			</div>
+		</nav>
+
+		<div class="container-main" bs-affix-target>
+			<div class="row">
+				<div class="col-sm-12">
+					<ui-view name="main"></ui-view>
+				</div>
+			</div>
+		</div>
+
+    <!-- /page wrapper -->
+    </div>
+
+    <footer class="navbar navbar-default navbar-static-bottom footer">
+		<ul class="navbar-header">
+			<li><a href="" tabindex="-1" translate="Help">Help</a></li>
+			<li><a href="" tabindex="-1" translate="Support">Support</a></li>
+			<li><a href="" tabindex="-1" translate="Feedback">Feedback</a></li>
+		</ul>
+	</footer>
+
+		<ui-view name="modal"></ui-view>
+
+		<!--(if target dev)><!-->
+		<script data-main="scripts/main" type="text/javascript" src="bower_components/requirejs/require.js"></script>
+		<!--<!(endif)-->
+		<!--(if target !dev)>
+		<script type="text/javascript" src="scripts/scripts.js"></script>
+		<!(endif)-->
+	</body>
+</html>
+<!-- CLM-WEB-UI: {{build}} -->
